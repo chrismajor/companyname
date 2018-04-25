@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class TechCompanyController {
 
@@ -15,8 +18,10 @@ public class TechCompanyController {
 
     @GetMapping("/")
     public String getTechName(Model model) {
-//        String companyName = techCompanyService.getCompanyName();
-
+        String companyName = techCompanyService.getCompanyName();
+        List<String> companyNames = new ArrayList<>();
+        companyNames.add(companyName);
+        model.addAttribute("companyNames", companyNames);
         return "techname";
     }
 }
