@@ -15,7 +15,7 @@ public class TechCompanyController {
 
     @GetMapping("/")
     public String getTechName(Model model) {
-        String companyName = techCompanyService.getCompanyName();
+//        String companyName = techCompanyService.getCompanyName();
 
         return "techname";
     }

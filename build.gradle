@@ -31,9 +31,10 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compile 'org.apache.commons:commons-lang3:3.0'
+	compile 'com.wordnik:wordnik-java-client:1.0.0'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
