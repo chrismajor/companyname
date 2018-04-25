@@ -3,7 +3,10 @@ buildscript {
 		springBootVersion = '2.0.1.RELEASE'
 	}
 	repositories {
-		mavenCentral()
+//		mavenCentral()
+		maven {
+			url 'http://10.254.129.254:8080/archiva/repository/internal/'
+		}
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -20,11 +23,17 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+//	mavenCentral()
+	maven {
+		url 'http://10.254.129.254:8080/archiva/repository/internal/'
+	}
 }
 
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+defaultTasks 'build'
