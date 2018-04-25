@@ -1,6 +1,8 @@
 package io.sistersdoingitforthemselves.company.controller;
 
+import io.sistersdoingitforthemselves.company.service.CompanyNameService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,12 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TechCompanyController {
 
+    @Autowired
+    CompanyNameService techCompanyService;
+
     @GetMapping("/")
     public String getTechName(Model model) {
-        // here's the basic logic for stripping out the last vowel...
-        String thing = "not on my watch...";
-        int lastVowelIndex = StringUtils.lastIndexOfAny(thing, "a", "e", "i", "o", "u");
-        String newString = thing.substring(0, lastVowelIndex) + thing.substring(lastVowelIndex + 1);
+        String companyName = techCompanyService.getCompanyName();
 
         return "techname";
     }
