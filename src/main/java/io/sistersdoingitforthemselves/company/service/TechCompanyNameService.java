@@ -20,7 +20,8 @@ public class TechCompanyNameService implements CompanyNameService {
         try {
             String noun = randomWordDAO.getRandomWord("noun");
             int lastVowelIndex = StringUtils.lastIndexOfAny(noun, Constants.VOWELS);
-            return noun.substring(0, lastVowelIndex) + noun.substring(lastVowelIndex + 1);
+            String nounMinusVowel = noun.substring(0, lastVowelIndex) + noun.substring(lastVowelIndex + 1);
+            return StringUtils.capitalize(nounMinusVowel);
         }
         catch (ApiException e) {
             // TODO: proper error handling

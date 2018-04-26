@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <title>Tech Company Name</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-    <h1>Random tech company name...</h1>
-    <script src="js/bootstrap.min.js"></script>
+    <div class="container main-content">
+        <h4>The name for your new tech startup is...</h4>
+        <script src="js/bootstrap.min.js"></script>
 
-    <th:block th:each="companyName : ${companyNames}">
-        <p th:text="${companyName}"></p>
-    </th:block>
+        <th:block th:each="companyName : ${companyNames}">
+            <h1 th:text="${companyName}"></h1>
+        </th:block>
 
-    <p>(☞ﾟ∀ﾟ)☞</p>
+        <p>(☞ﾟ∀ﾟ)☞</p>
+    </div>
 </body>
 </html>

@@ -3,10 +3,7 @@ buildscript {
 		springBootVersion = '2.0.1.RELEASE'
 	}
 	repositories {
-//		mavenCentral()
-		maven {
-			url 'http://10.254.129.254:8080/archiva/repository/internal/'
-		}
+		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -14,19 +11,15 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'io.sistersdoingitforthemselves'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = 1.8
 
 repositories {
-//	mavenCentral()
-	maven {
-		url 'http://10.254.129.254:8080/archiva/repository/internal/'
-	}
+	mavenCentral()
 }
 
 
